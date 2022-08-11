@@ -21,27 +21,26 @@ import lombok.Setter;
 public class Member {
 
 	@Id
-	@Column(length = 20)
+	@Column(length = 20, nullable = false)
 	private String member_id;
 	
-	@Column(length = 20)
+	@Column(length = 20, nullable = false)
 	private String member_pwd;
 	
-	@Column(length = 20)
+	@Column(length = 20, nullable = false)
 	private String member_name;
 	
-	@Column(length = 40, unique = true)
+	@Column(length = 40, unique = true, nullable = false)
 	private String member_email;
 	
-	@Column(length = 4)
+	@Column(length = 4, nullable = false)
 	private String member_gender;
 	
 	private LocalDateTime member_birth;
 	
-	@Column(length = 11)
+	@Column(length = 11, nullable = false)
 	private String member_phone;
 	
-	@Column(length = 100)
 	private String member_imagePath;
 	
 	private LocalDateTime member_joinDate;

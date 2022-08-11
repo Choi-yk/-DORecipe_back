@@ -3,11 +3,12 @@ package com.dorecipe.main.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -19,11 +20,14 @@ import lombok.Setter;
 @Table(name="recommendrecipe")
 public class RecommendRecipe {
 
-//	private Member member_id
 	
-	@OneToOne
-	@JoinColumn(name="recipe_num")
-	private Recipe recipe_num;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "member_id")
+	private String member_id;
+//	
+//	@ManyToOne
+	@JoinColumn(name = "recipe_num")
+	private int recipe_num;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
