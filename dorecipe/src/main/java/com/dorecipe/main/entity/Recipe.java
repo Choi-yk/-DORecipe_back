@@ -20,47 +20,50 @@ public class Recipe {
 	// 레시피
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int recipe_num;
+	private int recipe_num;
 	
-	String recipe_title;
+	private String recipe_title;
 	
-	int recipe_savetype;
+	private int recipe_savetype;
 	
-	String recipe_introduce;
+	private String recipe_introduce;
 	
-	String recipe_url;
+	private String recipe_url;
 	
-	String recipe_rpath;
+	private String recipe_rpath;
 	
-	String recipe_tag;
+	private String recipe_tag;
 	
-	String category_kind;
+	// 카테고리
+	private String category_kind;
 	
-	String category_theme;
+	private String category_theme;
 	
-	String category_way;
+	private String category_way;
 	
-	String category_ing;
+	private String category_ing;
 
 	 // 요리 정보
-	String information_person;
+	private String information_person;
 	
-	String infotmaion_time;
+	private String infotmaion_time;
 	
-	String infotmaion_level;
+	private String infotmaion_level;
 	
 	// 요리 완성
-	String completion_path1;
+	private String completion_path1;
 	
-	String completion_path2;
+	private String completion_path2;
 	
-	String completion_path3;
+	private String completion_path3;
 	
-	String completion_path4;
+	private String completion_path4;
 	
-	String completion_tip;
+	private String completion_tip;
 	
-	LocalDateTime recipe_creDate;
+	private LocalDateTime recipe_creDate;
+	
+	
 	
 	String member_id;
 }
