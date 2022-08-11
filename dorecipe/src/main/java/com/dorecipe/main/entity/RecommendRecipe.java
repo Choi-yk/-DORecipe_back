@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -20,8 +21,9 @@ public class RecommendRecipe {
 
 //	private Member member_id
 	
+	@OneToOne
 	@JoinColumn(name="recipe_num")
-	private Long recipe_num;
+	private Recipe recipe_num;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
