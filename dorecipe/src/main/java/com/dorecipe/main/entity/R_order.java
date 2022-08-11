@@ -38,4 +38,5 @@ public class R_order implements Serializable {
 	
 	@Column(length = 100)
 	String order_path;
+	
 }

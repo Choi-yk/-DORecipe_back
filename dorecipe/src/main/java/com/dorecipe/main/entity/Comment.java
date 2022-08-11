@@ -51,4 +51,5 @@ public class Comment implements Serializable {
 	
 	@CreatedDate
 	private LocalDateTime comment_creDate;
+	
 }
