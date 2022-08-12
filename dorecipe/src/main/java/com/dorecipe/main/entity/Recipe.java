@@ -1,6 +1,7 @@
 package com.dorecipe.main.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -87,7 +90,11 @@ public class Recipe {
 	@CreatedDate
 	private LocalDateTime recipe_creDate;
 	
-	@JoinColumn(name = "member_id")
-	private Member member;
+//	private Member member;
+	
+	@OneToMany(mappedBy = "recipe_num")
+	private List<RecommendRecipe> reco_recipeList;
+	
+	
 	
 }

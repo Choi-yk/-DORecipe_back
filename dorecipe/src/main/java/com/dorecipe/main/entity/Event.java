@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -22,7 +24,9 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int event_num;
 	
-//	private Member member_id;
+	@ManyToOne
+	@JoinColumn(name = "member_id")
+	private Member member; 
 	
 	@Column(length = 100)
 	private String event_title;

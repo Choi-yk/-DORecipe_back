@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -21,13 +23,14 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor // 디폴트 생성자가 존재 (Lombok의 @NoArgsConstructor 어노테이션 추가로 자동 생성)
 @AllArgsConstructor
-@IdClass(Order_Id.class) // 복합키 사용
+@IdClass(R_order_Id.class) // 복합키 사용
 @Table(name="r_order")
 public class R_order implements Serializable {
 	
 	@Id
 	@JoinColumn(name = "recipe_num")
-	private String recipe_num;
+	@ManyToOne
+	private Recipe recipe_num;
 	//private Recipe recipe;
 	
 	@Id

@@ -1,12 +1,14 @@
 package com.dorecipe.main.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.dorecipe.main.Role;
@@ -49,5 +51,8 @@ public class Member {
 	
 	@Enumerated(EnumType.STRING)
 	private Role role;
+
+	@OneToMany(mappedBy = "member_id")
+	private List<RecommendRecipe> reco_recipeList;
 	
 }
